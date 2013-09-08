@@ -1,7 +1,16 @@
 Task2::Application.routes.draw do
-  get "scheduler/home"
-  get "scheduler/help"
-  get "scheduler/about"
+  get "users/new"
+
+  match '/signup',  to: 'users#new', via: 'get'
+  match '/scheduler/home', to: 'scheduler#home', via: 'get'
+  match '/scheduler/help',    to: 'scheduler#help',    via: 'get'
+  match '/scheduler/about',   to: 'scheduler#about',   via: 'get'
+  match '/scheduler/contact', to: 'scheduler#contact', via: 'get'
+
+  resources :tasks
+
+
+
   resources :courses
 
   resources :users

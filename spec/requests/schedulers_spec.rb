@@ -11,40 +11,54 @@ require 'spec_helper'
 #end
 
 describe "Schedulers" do
+
+ let(:base_title) { "Scheduler Learning" }
+
   describe "Home page" do
 
     it "should have the content 'Scheduler'" do
-      visit '/scheduler/home'
+      visit scheduler_home_path
       expect(page).to have_content('Scheduler')
     end
 
     it "should have the right title" do
-      visit '/scheduler/home'
-      expect(page).to have_title("Scheduler Learning | Home")
+      visit scheduler_home_path
+      expect(page).to have_title("#{base_title} | Home")
     end
   end
 
   describe "Help page" do
     it "should have the content 'Help'" do
-      visit '/scheduler/help'
+      visit scheduler_help_path
       expect(page).to have_content('Help')
     end
 
     it "should have the right title" do
-      visit '/scheduler/help'
-      expect(page).to have_title("Scheduler Learning | Help")
+      visit scheduler_help_path
+      expect(page).to have_title("#{base_title} | Help")
     end
   end
 
   describe "About page" do
     it "should have the content 'About Us'" do
-      visit '/scheduler/about'
-      expect(page).to have_content('About Us')
+      visit scheduler_about_path
+    expect(page).to have_content('About Us')
     end
 
     it "should have the right title" do
-      visit '/scheduler/about'
-      expect(page).to have_title("Scheduler Learning | About")
+      visit scheduler_about_path
+      expect(page).to have_title("#{base_title} | About")
     end
   end
+
+  describe "Contact page" do
+    it "should have the content 'Contact'" do
+      visit scheduler_contact_path
+      expect(page).to have_content('Contact')
+    end
+    it "should have the title 'Contact'" do
+      visit scheduler_contact_path
+     expect(page).to have_title("#{base_title} | Contact")
+   end end
 end
+

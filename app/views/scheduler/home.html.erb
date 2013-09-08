@@ -1,11 +1,15 @@
 <% provide(:title, 'Home') %>
 <!DOCTYPE html>
 <html>
-<h1>Scheduler</h1>
-<p>
-  This is the home page for Ivan's leaning rails web development.
-  Sample app Scheduler.
-</p>
+
+<div class="center hero-unit">
+  <h1>Welcome to the Scheduler</h1>
+  <h2>
+    This is the home page for for Ivan's leaning rails web development.
+    Sample app Scheduler.
+  </h2>
+  <%= link_to "Sign up now!", signup_path, class: "btn btn-large btn-primary" %>
+</div>
+<%= link_to image_tag("rails.png", alt: "Rails"), 'http://rubyonrails.org/' %>
+
 </html>
-
-
