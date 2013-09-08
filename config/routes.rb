@@ -1,4 +1,6 @@
 Task2::Application.routes.draw do
+  get "scheduler/home"
+  get "scheduler/help"
   resources :courses
 
   resources :users
