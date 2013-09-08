@@ -48,5 +48,8 @@ end
 # Deploy with Capistrano
 # gem 'capistrano'
 
+#rubyzip added mannually
+gem 'rubyzip',  "~> 0.9.9"
+
 # To use debugger
 # gem 'debugger'
