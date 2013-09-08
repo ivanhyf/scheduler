@@ -21,15 +21,23 @@ group :assets do
 end
 
 gem 'jquery-rails', '2.2.1'
+gem 'turbolinks', '1.1.1'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
 # To use Jbuilder templates for JSON
-# gem 'jbuilder'
+gem 'jbuilder', '1.0.2'
 
 # Use unicorn as the app server
 # gem 'unicorn'
+group :doc do
+  gem 'sdoc', '0.3.20', require:false
+end
+
+group :production do
+  gem 'pg', '0.15.1'
+end
 
 # Deploy with Capistrano
 # gem 'capistrano'
