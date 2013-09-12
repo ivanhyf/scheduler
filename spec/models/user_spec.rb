@@ -88,3 +88,4 @@ describe User do
     it { should be_invalid }
   end
 end
+

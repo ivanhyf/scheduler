@@ -1,5 +1,4 @@
 Task2::Application.routes.draw do
-  get "users/new"
 
   match '/signup',  to: 'users#new', via: 'get'
   match '/scheduler/home', to: 'scheduler#home', via: 'get'
