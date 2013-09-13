@@ -1,10 +1,13 @@
 Task2::Application.routes.draw do
 
   match '/signup',  to: 'users#new', via: 'get'
-  match '/scheduler/home', to: 'scheduler#home', via: 'get'
+  match '/scheduler/home', to: 'scheduler#home', via: 'get' # please try to make this the home page
   match '/scheduler/help',    to: 'scheduler#help',    via: 'get'
   match '/scheduler/about',   to: 'scheduler#about',   via: 'get'
   match '/scheduler/contact', to: 'scheduler#contact', via: 'get'
+  match '/signin',  to: 'sessions#new',  via: 'get'
+  match '/signout', to: 'sessions#destroy',  via: 'delete'
+
 
   resources :tasks
 
@@ -13,6 +16,7 @@ Task2::Application.routes.draw do
   resources :courses
 
   resources :users
+  resources :sessions, only: [:new, :create, :destroy]
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
