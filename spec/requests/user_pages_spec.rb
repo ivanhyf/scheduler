@@ -55,10 +55,18 @@ describe "UserPages" do
 
   describe "profile page" do
     let(:user) { FactoryGirl.create(:user) }
+    let!(:c1) { FactoryGirl.create(:course, user: user, name: "Software Engineering") }
+    let!(:c2) { FactoryGirl.create(:course, user: user, name: "Computer Systems") }
     before { visit user_path(user) }
 # Replace with code to make a user variable before { visit user_path(user) }
     it { should have_content(user.name) }
     it { should have_title(user.name) }
+
+    describe "courses" do
+      it { should have_content(c1.name) }
+      it { should have_content(c2.name) }
+      it { should have_content(user.courses.count) }
+    end
   end
 
   describe "signup" do

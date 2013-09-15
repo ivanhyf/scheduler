@@ -1,0 +1,6 @@
+<li>
+  <span class="name"><%= course.name %></span>
+  <% if current_user?(micropost.user) %>
+  <%= link_to "Completed", course, method: :delete, data: { confirm: "Congratulations! Are you completed this course?" }, title: course.name %>
+      <% end %>
+</li>

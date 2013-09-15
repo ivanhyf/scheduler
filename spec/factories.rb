@@ -8,4 +8,9 @@ FactoryGirl.define do
       admin true
     end
   end
+
+  factory :course do
+    name "Software Engineering"
+    user
+  end
 end

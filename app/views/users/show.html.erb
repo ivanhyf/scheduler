@@ -10,6 +10,16 @@
       <%= link_to 'Back', users_path %>
     </section>
   </aside>
+
+  <div class="span8">
+    <% if @user.courses.any? %>
+        <h3>Courses (<%= @user.courses.count %>)</h3>
+        <ol class="courses">
+          <%= render @courses %>
+        </ol>
+        <%= will_paginate @courses %>       <!-- divide pages for courses, may be deleted -->
+    <% end %>
+  </div>
 </div>
 
 

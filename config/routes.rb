@@ -13,7 +13,7 @@ Task2::Application.routes.draw do
 
 
 
-  resources :courses
+  resources :courses, only: [:create, :destroy]
 
   resources :users
   resources :sessions, only: [:new, :create, :destroy]
